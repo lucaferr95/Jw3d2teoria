@@ -23,6 +23,8 @@ public class Studente {
     @Column(name = "tipo_studente") // gli diamo uno snake case con l'underscore
     private TipoStudente tipoStudente;
 
+    public Studente () {}
+
     public Studente(int matricola, String nome, String cognome, LocalDate dataNascita, TipoStudente tipoStudente) {
         this.matricola = matricola;
         this.nome = nome;

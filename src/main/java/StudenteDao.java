@@ -22,4 +22,21 @@ public class StudenteDao {
          em.getTransaction().commit(); //Salvataggio effettivo
      }
 
+     public Studente getById(int matricola) {
+         return em.find(Studente.class, matricola); //metodo find restituisce uno studente
+         //ha bisogno di due parametri di ingresso
+         //il primo è il nome della classe, il secondo è la chiave primaria
+     }
+
+    public void rimuovi (int matricola) {
+        //se non trova uno studente ritornerà null
+        Studente s= getById(matricola);
+
+        if(s!=null) {
+            em.getTransaction().begin();
+            em.remove(s);
+            em.getTransaction().commit();
+    }
+    }
 }
+
