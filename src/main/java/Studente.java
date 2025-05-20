@@ -23,12 +23,12 @@ public class Studente {
     @Column(name = "tipo_studente") // gli diamo uno snake case con l'underscore
     private TipoStudente tipoStudente;
 
-    public Studente(TipoStudente tipoStudente, LocalDate dataNascita, String cognome, String nome, int matricola) {
-        this.tipoStudente = tipoStudente;
-        this.dataNascita = dataNascita;
-        this.cognome = cognome;
-        this.nome = nome;
+    public Studente(int matricola, String nome, String cognome, LocalDate dataNascita, TipoStudente tipoStudente) {
         this.matricola = matricola;
+        this.nome = nome;
+        this.cognome = cognome;
+        this.dataNascita = dataNascita;
+        this.tipoStudente = tipoStudente;
     }
 
     public int getMatricola() {
@@ -70,7 +70,6 @@ public class Studente {
     public void setTipoStudente(TipoStudente tipoStudente) {
         this.tipoStudente = tipoStudente;
     }
-
     @Override
     public String toString() {
         return "Studente{" +
@@ -80,5 +79,10 @@ public class Studente {
                 ", dataNascita=" + dataNascita +
                 ", tipoStudente=" + tipoStudente +
                 '}';
-    }
 }
+
+
+
+
+
+    }
